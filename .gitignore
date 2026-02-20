@@ -1,0 +1,42 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Kotlin
+*.class
+*.jar
+*.war
+*.log
+out/
+
+# IDE - IntelliJ / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# IDE - VS Code
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Local config and secrets
+*.local
+.env
+.env.*
+!.env.example
+
+# Misc
+*.swp
+*.swo
+*~
+*.bak
