@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Build-Date: 2024-02-04
+Build-Revision: 4c0dddad1b96d4a20e92a2cd583954643ac56ac0 
+Build-Time: 09:34:27.111+0100
+Built-By: JUnit Team
+Bundle-ManifestVersion: 2
+Bundle-Name: JUnit Platform Launcher
+Bundle-SymbolicName: junit-platform-launcher
+Bundle-Version: 1.10.2
+Created-By: 17.0.9 (BellSoft 17.0.9+11-LTS)
+Export-Package: org.junit.platform.launcher;version="1.10.2";status=ST
+ ABLE;uses:="org.apiguardian.api,org.junit.platform.commons,org.junit.
+ platform.engine,org.junit.platform.engine.reporting",org.junit.platfo
+ rm.launcher.core;version="1.10.2";status=STABLE;uses:="org.apiguardia
+ n.api,org.junit.platform.commons,org.junit.platform.engine,org.junit.
+ platform.launcher",org.junit.platform.launcher.listeners;version="1.1
+ 0.2";status=MAINTAINED;uses:="org.apiguardian.api,org.junit.platform.
+ engine,org.junit.platform.launcher",org.junit.platform.launcher.liste
+ ners.discovery;version="1.10.2";status=STABLE;uses:="org.apiguardian.
+ api,org.junit.platform.launcher",org.junit.platform.launcher.listener
+ s.session;version="1.10.2";status=INTERNAL;mandatory:=status;uses:="o
+ rg.apiguardian.api,org.junit.platform.launcher",org.junit.platform.la
+ uncher.tagexpression;version="1.10.2";status=INTERNAL;mandatory:=stat
+ us;uses:="org.apiguardian.api,org.junit.platform.engine"
+Implementation-Title: junit-platform-launcher
+Implementation-Vendor: junit.org
+Implementation-Version: 1.10.2
+Import-Package: org.apiguardian.api;resolution:=optional;version="[1.1
+ ,2)",org.junit.platform.commons.logging;status=INTERNAL;version="[1.1
+ 0,2)",org.junit.platform.commons;version="[1.10,2)",org.junit.platfor
+ m.commons.util;version="[1.10,2)",org.junit.platform.engine;version="
+ [1.10,2)",org.junit.platform.engine.discovery;version="[1.10,2)",org.
+ junit.platform.engine.reporting;version="[1.10,2)",org.junit.platform
+ .engine.support.descriptor;version="[1.10,2)",org.junit.platform.laun
+ cher;version="[1.10,2)",org.junit.platform.launcher.listeners.discove
+ ry;version="[1.10,2)"
+Provide-Capability: org.junit.platform.launcher;org.junit.platform.lau
+ ncher=junit-platform-launcher;version:Version="1.10.2"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Specification-Title: junit-platform-launcher
+Specification-Vendor: junit.org
+Specification-Version: 1.10.2
+

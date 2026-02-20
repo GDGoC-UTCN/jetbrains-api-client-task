@@ -69,4 +69,28 @@ object Strings {
         const val ERROR_FORMAT = "Error: %s"
         const val UNKNOWN_ERROR = "Unknown error"
     }
+
+    object Verification {
+        const val CHECK_PROGRESS = "Check progress"
+        const val TITLE = "Test results"
+        const val NOT_AVAILABLE = "Verification not available."
+        const val RUNNING = "Running checks..."
+    }
+
+    object Common {
+        const val OK = "OK"
+    }
+
+    object Submit {
+        const val BUTTON = "Submit solution"
+        const val DIALOG_TITLE = "Submit solution"
+        const val CONFIRM_MESSAGE = "This will zip your project (src/main + build files), run the verification tests, and send the zip plus results to the contest server. Continue?"
+        const val NAME_LABEL = "Your name"
+        const val NAME_PLACEHOLDER = "Enter your name"
+        const val SUBMIT = "Submit"
+        const val CANCEL = "Cancel"
+        const val SUBMITTING = "Submitting..."
+        const val SUCCESS = "Submission received. Thank you!"
+        const val ERROR_PREFIX = "Submission failed: "
+    }
 }

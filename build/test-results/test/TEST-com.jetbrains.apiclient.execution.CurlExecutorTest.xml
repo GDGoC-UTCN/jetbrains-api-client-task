@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.jetbrains.apiclient.execution.CurlExecutorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-02-20T19:33:08" hostname="ip-192-168-0-184.eu-west-2.compute.internal" time="0.241">
+  <properties/>
+  <testcase name="execute with headers that are not a JSON object returns -1()" classname="com.jetbrains.apiclient.execution.CurlExecutorTest" time="0.041"/>
+  <testcase name="execute with empty headers string does not fail validation()" classname="com.jetbrains.apiclient.execution.CurlExecutorTest" time="0.108"/>
+  <testcase name="execute with valid JSON object headers passes validation()" classname="com.jetbrains.apiclient.execution.CurlExecutorTest" time="0.087"/>
+  <testcase name="execute with empty URL string returns -1()" classname="com.jetbrains.apiclient.execution.CurlExecutorTest" time="0.001"/>
+  <testcase name="execute with blank URL returns -1 and outputs error()" classname="com.jetbrains.apiclient.execution.CurlExecutorTest" time="0.001"/>
+  <testcase name="execute with invalid headers JSON returns -1 and outputs error()" classname="com.jetbrains.apiclient.execution.CurlExecutorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

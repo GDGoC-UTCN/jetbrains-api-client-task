@@ -1,7 +1,11 @@
 # Gradle
 .gradle/
-build/
+# build/ intentionally not ignored: for handout :) we need this to be present 
+# as the verification JAR is embedded in the app
 !gradle/wrapper/gradle-wrapper.jar
+
+# TODO (handout): Hide test sources from participants when creating the
+# handout repo, do not include src/test/ 
 
 # Kotlin
 *.class
