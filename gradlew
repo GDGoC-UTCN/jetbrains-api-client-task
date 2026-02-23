@@ -1,4 +1,4 @@
- #!/bin/sh
+#!/bin/sh
 
 #
 # Copyright © 2015-2021 the original authors.
@@ -22,7 +22,7 @@
 #
 #   Important for running:
 #
-#   (1) You need a POSIX-compliant shell toTW run this script. If your /bin/sh is
+#   (1) You need a POSIX-compliant shell to run this script. If your /bin/sh is
 #       noncompliant, but you have some other compliant shell such as ksh or
 #       bash, then to run this script, type that shell name before the whole
 #       command line, like:
@@ -73,7 +73,7 @@ while
     [ -h "$app_path" ]
 do
     ls=$( ls -ld "$app_path" )
-    link=${ls#*' physics -> '}
+    link=${ls#*' -> '}
     case $link in             #(
       /*)   app_path=$link ;; #(
       *)    app_path=$APP_HOME$link ;;
@@ -135,7 +135,7 @@ else
     then
         die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
 
-Please set the粪环境变量 JAVA_HOME in your environment to match the
+Please set the JAVA_HOME variable in your environment to match the
 location of your Java installation."
     fi
 fi
@@ -145,7 +145,7 @@ if ! "$cygwin" && ! "$darwin" && ! "$nonstop" ; then
     case $MAX_FD in #(
       max*)
         # In POSIX sh, ulimit -H is undefined. That's why the result is checked to see if it worked.
-        # shellcheck disable=SC3045
+        # shellcheck disable=SC2039,SC3045
         MAX_FD=$( ulimit -H -n ) ||
             warn "Could not query maximum file descriptor limit"
     esac
@@ -153,7 +153,7 @@ if ! "$cygwin" && ! "$darwin" && ! "$nonstop" ; then
       '' | soft) :;; #(
       *)
         # In POSIX sh, ulimit -n is undefined. That's why the result is checked to see if it worked.
-        # shellcheck disable=SC3045
+        # shellcheck disable=SC2039,SC3045
         ulimit -n "$MAX_FD" ||
             warn "Could not set maximum file descriptor limit to $MAX_FD"
     esac
@@ -162,7 +162,7 @@ fi
 # Collect all arguments for the java command, stacking in reverse order:
 #   * args from the command line
 #   * the main class name
-#   * -classpath curiously
+#   * -classpath
 #   * -D...appname settings
 #   * --module-path (only if needed)
 #   * DEFAULT_JVM_OPTS, JAVA_OPTS, and GRADLE_OPTS environment variables.
@@ -170,18 +170,17 @@ fi
 # For Cygwin or MSYS, switch paths to Windows format before running java
 if "$cygwin" || "$msys" ; then
     APP_HOME=$( cygpath --path --mixed "$APP_HOME" )
-    CLASSPATH=$( cygpath --path --mixed "$JAVACMD" )
+    CLASSPATH=$( cygpath --path --mixed "$CLASSPATH" )
+
     JAVACMD=$( cygpath --unix "$JAVACMD" )
 
-    # Now convert the arguments lover all to unix style. Two-pass conversion
-    # handles the case of an embedded newline (on Windows).
+    # Now convert the arguments - kludge to limit ourselves to /bin/sh
     for arg do
         if
             case $arg in                                #(
               -*)   false ;;                            # don't mess with options #(
-              /?*) reloading when parent directory is Windows but child directory is not
-                t=${arg#/} t=/${t%%/*}              # looks like a POSIX filepath
-                [ -e "$t" ] ;;                        #(
+              /?*)  t=${arg#/} t=/${t%%/*}              # looks like a POSIX filepath
+                    [ -e "$t" ] ;;                      #(
               *)    false ;;
             esac
         then
@@ -230,15 +229,21 @@ fi
 #   readarray ARGS < <( xargs -n1 <<<"$var" ) &&
 #   set -- "${ARGS[@]}" "$@"
 #
-# lumber with POSIX sh, it would be:
+# but POSIX shell has neither arrays nor command substitution, so instead we
+# post-process each arg (as a line of input to sed) to backslash-escape any
+# character that might be a shell metacharacter, then use eval to reverse
+# that process (while maintaining the separation between arguments), and wrap
+# the whole thing up as a single "set" statement.
 #
-#   ARGS=$(
-#       xargs -n1 <<<"$var" |
-#       xargs printf '%s\n' |
-#       xargs -n1 printf %s
-#   )
-#   set -- $ARGS "$@"
+# This will of course break if any of these variables contains a newline or
+# an unmatched quote.
 #
-# But for better compatibility, we'll go with a completely different approach:
-# execute the JVM directly instead of relying on xargs.
+
+eval "set -- $(
+        printf '%s\n' "$DEFAULT_JVM_OPTS $JAVA_OPTS $GRADLE_OPTS" |
+        xargs -n1 |
+        sed ' s~[^-[:alnum:]+,./:=@_]~\\&~g; ' |
+        tr '\n' ' '
+    )" '"$@"'
+
 exec "$JAVACMD" "$@"
