@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-02-23T18:07:45.423Z" hostname="ip-192-168-0-146.eu-west-2.compute.internal" time="1.7">
+<testsuite name="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-02-23T18:25:00.895Z" hostname="ip-192-168-0-146.eu-west-2.compute.internal" time="1.672">
   <properties/>
   <testcase name="addRequest with blank name does nothing()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.163"/>
-  <testcase name="init creates New request when storage is empty()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.057"/>
-  <testcase name="loadRequests reloads from storage()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.161"/>
-  <testcase name="updateCurrentRequest updates url method headers body()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.164"/>
-  <testcase name="renameRequest updates name and selection()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.162"/>
-  <testcase name="deleteRequest removes request and selects another()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.265"/>
-  <testcase name="selectRequest updates selection()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.16"/>
-  <testcase name="dialog show and dismiss()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.056"/>
-  <testcase name="renameRequest with blank name does nothing()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.183"/>
-  <testcase name="addRequest adds request and selects it()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.16"/>
-  <testcase name="updateCurrentRequest with null selected does nothing()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.163"/>
+  <testcase name="init creates New request when storage is empty()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.056"/>
+  <testcase name="loadRequests reloads from storage()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.159"/>
+  <testcase name="updateCurrentRequest updates url method headers body()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.163"/>
+  <testcase name="renameRequest updates name and selection()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.161"/>
+  <testcase name="deleteRequest removes request and selects another()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.264"/>
+  <testcase name="selectRequest updates selection()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.159"/>
+  <testcase name="dialog show and dismiss()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.057"/>
+  <testcase name="renameRequest with blank name does nothing()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.159"/>
+  <testcase name="addRequest adds request and selects it()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.158"/>
+  <testcase name="updateCurrentRequest with null selected does nothing()" classname="com.jetbrains.apiclient.viewmodel.RequestsViewModelTest" time="0.166"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

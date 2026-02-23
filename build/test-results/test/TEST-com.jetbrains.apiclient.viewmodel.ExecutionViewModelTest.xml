@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-02-23T18:07:45.305Z" hostname="ip-192-168-0-146.eu-west-2.compute.internal" time="0.118">
+<testsuite name="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-02-23T18:25:00.788Z" hostname="ip-192-168-0-146.eu-west-2.compute.internal" time="0.106">
   <properties/>
-  <testcase name="sendRequest when already running does not start second execution()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.035"/>
-  <testcase name="initial state is not running and empty output()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.001"/>
+  <testcase name="sendRequest when already running does not start second execution()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.026"/>
+  <testcase name="initial state is not running and empty output()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.002"/>
   <testcase name="sendRequest clears output when starting()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.025"/>
   <testcase name="clearOutput clears outputContent()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.001"/>
-  <testcase name="sendRequest with blank URL completes with error status and output()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.026"/>
-  <testcase name="sendRequest invokes onStatusUpdate with SENDING then final status()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.026"/>
-  <testcase name="sendRequest with null shows message and does not run()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.002"/>
+  <testcase name="sendRequest with blank URL completes with error status and output()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.025"/>
+  <testcase name="sendRequest invokes onStatusUpdate with SENDING then final status()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.021"/>
+  <testcase name="sendRequest with null shows message and does not run()" classname="com.jetbrains.apiclient.viewmodel.ExecutionViewModelTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
