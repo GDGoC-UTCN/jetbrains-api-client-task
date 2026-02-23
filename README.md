@@ -67,6 +67,9 @@ In PowerShell you can also use:
 
 # Troubleshooting
 
+- **"Cannot find a Java installation matching: {languageVersion=17}"**  
+  The project needs a JDK 17 toolchain to compile. Gradle will **auto-download** JDK 17 on first build (requires internet). If auto-download fails (e.g. corporate proxy), install [Eclipse Temurin 17](https://adoptium.net/temurin/releases/?version=17) and set `JAVA_HOME` to it.
+
 - **Build fails with warnings about `native-platform` or "What went wrong" on JDK 22+ / 25**  
   Gradle 8.5 only supports running on JDK 17–21. Use JDK 17 or 21 to run the build:
   1. Install [Eclipse Temurin 17](https://adoptium.net/temurin/releases/?version=17) or 21.
