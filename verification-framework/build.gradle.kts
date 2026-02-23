@@ -1,6 +1,6 @@
 plugins {
-    kotlin("jvm") version "1.9.20"
-    kotlin("plugin.serialization") version "1.9.20"
+    kotlin("jvm") version "2.1.0"
+    kotlin("plugin.serialization") version "2.1.0"
 }
 
 group = "com.jetbrains.apiclient"
@@ -15,7 +15,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
     implementation("org.junit.platform:junit-platform-launcher:1.10.2")
     implementation("org.junit.jupiter:junit-jupiter:5.10.2")
-    implementation("org.jetbrains.kotlin:kotlin-test:1.9.20")
+    implementation("org.jetbrains.kotlin:kotlin-test:2.1.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 }
 

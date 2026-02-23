@@ -54,16 +54,28 @@ In PowerShell you can also use:
 
 # Verify prerequisites
 
-- **Java 17:**
+- **Java 17 or 21** (required for Gradle; the app then runs on any JVM 17+):
   ```bash
   java -version
   ```
-  You should see a 17.x version.
+  You should see version 17 or 21. If you see 22, 25, etc., Gradle 8.5 may fail — set `JAVA_HOME` to a JDK 17 or 21 installation when building.
 
 - **curl:**
   ```bash
   curl --version
   ```
+
+# Troubleshooting
+
+- **Build fails with warnings about `native-platform` or "What went wrong" on JDK 22+ / 25**  
+  Gradle 8.5 only supports running on JDK 17–21. Use JDK 17 or 21 to run the build:
+  1. Install [Eclipse Temurin 17](https://adoptium.net/temurin/releases/?version=17) or 21.
+  2. Point Gradle at it when building, e.g. in PowerShell:
+     ```powershell
+     $env:JAVA_HOME = "C:\Program Files\Eclipse Adoptium\jdk-17.x.x-hotspot"   # adjust path
+     .\gradlew.bat build
+     ```
+  Or set `JAVA_HOME` permanently in System Properties → Environment variables.
 
 # Submit solution
 

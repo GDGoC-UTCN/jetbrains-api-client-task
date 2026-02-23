@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.jetbrains.apiclient.helpers.StorageHelperTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-02-20T19:33:08" hostname="ip-192-168-0-184.eu-west-2.compute.internal" time="0.022">
+<testsuite name="com.jetbrains.apiclient.helpers.StorageHelperTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-02-23T18:07:45.279Z" hostname="ip-192-168-0-146.eu-west-2.compute.internal" time="0.025">
   <properties/>
   <testcase name="loadRequests returns empty list on invalid JSON()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.009"/>
-  <testcase name="save and load round-trip preserves empty list()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.003"/>
-  <testcase name="load ignores unknown keys in JSON()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.002"/>
-  <testcase name="loadRequests returns empty list when file is blank()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.001"/>
+  <testcase name="save and load round-trip preserves empty list()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.004"/>
+  <testcase name="load ignores unknown keys in JSON()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.004"/>
+  <testcase name="loadRequests returns empty list when file is blank()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.002"/>
   <testcase name="loadRequests returns empty list when file is empty()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.001"/>
   <testcase name="loadRequests returns empty list when file does not exist()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.001"/>
-  <testcase name="save and load round-trip preserves requests()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.001"/>
+  <testcase name="save and load round-trip preserves requests()" classname="com.jetbrains.apiclient.helpers.StorageHelperTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
