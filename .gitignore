@@ -2,7 +2,6 @@
 .gradle/
 # build/ intentionally not ignored: for handout :) we need this to be present 
 # as the verification JAR is embedded in the app
-!gradle/wrapper/gradle-wrapper.jar
 
 # TODO (handout): Hide test sources from participants when creating the
 # handout repo, do not include src/test/ 
@@ -12,6 +11,7 @@
 *.jar
 *.war
 *.log
+!gradle/wrapper/gradle-wrapper.jar
 out/
 
 # IDE - IntelliJ / Android Studio
