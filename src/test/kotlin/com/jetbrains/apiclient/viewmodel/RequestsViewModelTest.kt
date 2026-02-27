@@ -37,7 +37,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `init creates New request when storage is empty`() = runBlocking {
+    fun test1() = runBlocking {
         StorageHelper.testDataDir = tempDir
         val vm = RequestsViewModel(this)
         withTimeoutOrNull(2000) {
@@ -52,7 +52,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `addRequest adds request and selects it`() = runBlocking {
+    fun test2() = runBlocking {
         val vm = createViewModel()
         vm.showNewRequestDialog()
         vm.addRequest("  My Request  ")
@@ -63,7 +63,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `addRequest with blank name does nothing`() = runBlocking {
+    fun test3() = runBlocking {
         val vm = createViewModel()
         val initialCount = vm.requests.first().size
         vm.addRequest("")
@@ -73,7 +73,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `renameRequest updates name and selection`() = runBlocking {
+    fun test4() = runBlocking {
         val vm = createViewModel()
         val req = vm.requests.first().first()
         vm.showRenameRequestDialog(req)
@@ -85,7 +85,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `renameRequest with blank name does nothing`() = runBlocking {
+    fun test5() = runBlocking {
         val vm = createViewModel()
         val req = vm.requests.first().first()
         vm.renameRequest(req, "")
@@ -95,7 +95,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `deleteRequest removes request and selects another`() = runBlocking {
+    fun test6() = runBlocking {
         val vm = createViewModel()
         vm.addRequest("Second")
         kotlinx.coroutines.delay(100)
@@ -110,7 +110,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `selectRequest updates selection`() = runBlocking {
+    fun test7() = runBlocking {
         val vm = createViewModel()
         vm.addRequest("A")
         vm.addRequest("B")
@@ -123,7 +123,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `updateCurrentRequest updates url method headers body`() = runBlocking {
+    fun test8() = runBlocking {
         val vm = createViewModel()
         vm.updateCurrentRequest(
             url = "https://api.test.com",
@@ -141,7 +141,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `updateCurrentRequest with null selected does nothing`() = runBlocking {
+    fun test9() = runBlocking {
         val vm = createViewModel()
         vm.selectRequest(null)
         vm.updateCurrentRequest(url = "https://bad.com")
@@ -150,7 +150,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `dialog show and dismiss`() = runBlocking {
+    fun test10() = runBlocking {
         val vm = createViewModel()
         val req = vm.requests.first().first()
         assertFalse(vm.showNewRequestDialog.value)
@@ -173,7 +173,7 @@ class RequestsViewModelTest {
     }
 
     @Test
-    fun `loadRequests reloads from storage`() = runBlocking {
+    fun test11() = runBlocking {
         StorageHelper.testDataDir = tempDir
         StorageHelper.saveRequests(
             listOf(

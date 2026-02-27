@@ -20,14 +20,14 @@ class StorageHelperTest {
     }
 
     @Test
-    fun `loadRequests returns empty list when file does not exist`() = runTest {
+    fun test1() = runTest {
         StorageHelper.testDataDir = tempDir
         val result = StorageHelper.loadRequests()
         assertTrue(result.isEmpty())
     }
 
     @Test
-    fun `loadRequests returns empty list when file is empty`() = runTest {
+    fun test2() = runTest {
         StorageHelper.testDataDir = tempDir
         File(tempDir, "data.json").writeText("")
         val result = StorageHelper.loadRequests()
@@ -35,7 +35,7 @@ class StorageHelperTest {
     }
 
     @Test
-    fun `loadRequests returns empty list when file is blank`() = runTest {
+    fun test3() = runTest {
         StorageHelper.testDataDir = tempDir
         File(tempDir, "data.json").writeText("   \n\t  ")
         val result = StorageHelper.loadRequests()
@@ -43,7 +43,7 @@ class StorageHelperTest {
     }
 
     @Test
-    fun `loadRequests returns empty list on invalid JSON`() = runTest {
+    fun test4() = runTest {
         StorageHelper.testDataDir = tempDir
         File(tempDir, "data.json").writeText("not json at all")
         val result = StorageHelper.loadRequests()
@@ -51,7 +51,7 @@ class StorageHelperTest {
     }
 
     @Test
-    fun `save and load round-trip preserves requests`() = runTest {
+    fun test5() = runTest {
         StorageHelper.testDataDir = tempDir
         val requests = listOf(
             ApiRequest(name = "Get users", url = "https://api.example.com/users", method = HttpMethod.GET),
@@ -69,7 +69,7 @@ class StorageHelperTest {
     }
 
     @Test
-    fun `save and load round-trip preserves empty list`() = runTest {
+    fun test6() = runTest {
         StorageHelper.testDataDir = tempDir
         StorageHelper.saveRequests(emptyList())
         val loaded = StorageHelper.loadRequests()
@@ -77,7 +77,7 @@ class StorageHelperTest {
     }
 
     @Test
-    fun `load ignores unknown keys in JSON`() = runTest {
+    fun test7() = runTest {
         StorageHelper.testDataDir = tempDir
         val json = """[
             {"id":"a","name":"R1","url":"","method":"GET","headers":"","body":"","unknownField":123}

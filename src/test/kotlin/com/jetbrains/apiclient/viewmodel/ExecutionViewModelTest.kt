@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test
 class ExecutionViewModelTest {
 
     @Test
-    fun `sendRequest with null shows message and does not run`() = runTest {
+    fun test1() = runTest {
         val vm = ExecutionViewModel(this)
         val statusUpdates = mutableListOf<String>()
         vm.sendRequest(null) { statusUpdates.add(it) }
@@ -23,7 +23,7 @@ class ExecutionViewModelTest {
     }
 
     @Test
-    fun `clearOutput clears outputContent`() = runTest {
+    fun test2() = runTest {
         val vm = ExecutionViewModel(this)
         vm.outputContent.value = "some output"
         vm.clearOutput()
@@ -31,14 +31,14 @@ class ExecutionViewModelTest {
     }
 
     @Test
-    fun `initial state is not running and empty output`() = runTest {
+    fun test3() = runTest {
         val vm = ExecutionViewModel(this)
         assertFalse(vm.isRunning.value)
         assertEquals("", vm.outputContent.value)
     }
 
     @Test
-    fun `sendRequest with blank URL completes with error status and output`() = runBlocking {
+    fun test4() = runBlocking {
         val vm = ExecutionViewModel(this)
         val statusUpdates = mutableListOf<String>()
         vm.sendRequest(ApiRequest(name = "Test", url = "")) { statusUpdates.add(it) }
@@ -52,7 +52,7 @@ class ExecutionViewModelTest {
     }
 
     @Test
-    fun `sendRequest clears output when starting`() = runBlocking {
+    fun test5() = runBlocking {
         val vm = ExecutionViewModel(this)
         vm.outputContent.value = "previous output"
         val statusUpdates = mutableListOf<String>()
@@ -64,7 +64,7 @@ class ExecutionViewModelTest {
     }
 
     @Test
-    fun `sendRequest invokes onStatusUpdate with SENDING then final status`() = runBlocking {
+    fun test6() = runBlocking {
         val vm = ExecutionViewModel(this)
         val statusUpdates = mutableListOf<String>()
         vm.sendRequest(ApiRequest(name = "Test", url = "  ")) { statusUpdates.add(it) }
@@ -75,7 +75,7 @@ class ExecutionViewModelTest {
     }
 
     @Test
-    fun `sendRequest when already running does not start second execution`() = runBlocking {
+    fun test7() = runBlocking {
         val vm = ExecutionViewModel(this)
         val statusUpdates = mutableListOf<String>()
         vm.sendRequest(ApiRequest(name = "First", url = "")) { statusUpdates.add(it) }

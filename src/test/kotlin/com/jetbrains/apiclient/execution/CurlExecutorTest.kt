@@ -1,7 +1,6 @@
 package com.jetbrains.apiclient.execution
 
 import com.jetbrains.apiclient.model.ApiRequest
-import com.jetbrains.apiclient.model.HttpMethod
 import kotlinx.coroutines.test.runTest
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
@@ -9,7 +8,7 @@ import org.junit.jupiter.api.Test
 class CurlExecutorTest {
 
     @Test
-    fun `execute with blank URL returns -1 and outputs error`() = runTest {
+    fun test1() = runTest {
         val request = ApiRequest(name = "Test", url = "  ")
         val outputLines = mutableListOf<String>()
         val exitCode = CurlExecutor.execute(request) { outputLines.add(it) }
@@ -18,7 +17,7 @@ class CurlExecutorTest {
     }
 
     @Test
-    fun `execute with empty URL string returns -1`() = runTest {
+    fun test2() = runTest {
         val request = ApiRequest(name = "Test", url = "")
         val outputLines = mutableListOf<String>()
         val exitCode = CurlExecutor.execute(request) { outputLines.add(it) }
@@ -26,7 +25,7 @@ class CurlExecutorTest {
     }
 
     @Test
-    fun `execute with invalid headers JSON returns -1 and outputs error`() = runTest {
+    fun test3() = runTest {
         val request = ApiRequest(
             name = "Test",
             url = "https://example.com",
@@ -39,7 +38,7 @@ class CurlExecutorTest {
     }
 
     @Test
-    fun `execute with headers that are not a JSON object returns -1`() = runTest {
+    fun test4() = runTest {
         val request = ApiRequest(
             name = "Test",
             url = "https://example.com",
@@ -51,7 +50,7 @@ class CurlExecutorTest {
     }
 
     @Test
-    fun `execute with empty headers string does not fail validation`() = runTest {
+    fun test5() = runTest {
         val request = ApiRequest(
             name = "Test",
             url = "https://example.com",
@@ -64,7 +63,7 @@ class CurlExecutorTest {
     }
 
     @Test
-    fun `execute with valid JSON object headers passes validation`() = runTest {
+    fun test6() = runTest {
         val request = ApiRequest(
             name = "Test",
             url = "https://example.com",
